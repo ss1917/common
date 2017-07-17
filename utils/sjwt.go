@@ -5,7 +5,7 @@ import (
 	"crypto/md5"
 	"fmt"
 	jwt "github.com/dgrijalva/jwt-go"
-	"io"
+	//"io"
 	"time"
 )
 
@@ -54,13 +54,4 @@ func CheckToken(ss string) (name string, id, regionid int) {
 		regionid = claims.RegionId
 	}
 	return
-}
-
-//密码加密
-func GenMD5(pwd string) string {
-	md5Password := md5.New()
-	io.WriteString(md5Password, pwd)
-	buffer := bytes.NewBuffer(nil)
-	fmt.Fprintf(buffer, "%x", md5Password.Sum(nil))
-	return fmt.Sprintf("%s", buffer.String())
 }
