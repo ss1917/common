@@ -1,9 +1,6 @@
 package utils
 
 import (
-	"bytes"
-	"crypto/md5"
-	"fmt"
 	jwt "github.com/dgrijalva/jwt-go"
 	//"io"
 	"time"

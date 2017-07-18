@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"io"
 	"regexp"
-	"time"
 )
 
 //var emailPattern = regexp.MustCompile("[\\w!#$%&'*+/=?^_`{|}~-]+(?:\\.[\\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\\w](?:[\\w-]*[\\w])?\\.)+[a-zA-Z0-9](?:[\\w-]*[\\w])?")
@@ -25,7 +24,7 @@ func IsEmail(b []byte) bool {
 	return emailPattern.Match(b)
 }
 
-func Isphone(p []byte) bool {
+func Isphone(p string) bool {
 	if m, _ := regexp.MatchString(`^(1[3|4|5|8][0-9]\d{4,8})$`, p); !m {
 		return false
 	} else {
